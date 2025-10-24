@@ -539,16 +539,6 @@ const TaskCard = ({ task, deleteTask, onEditTask }) => {
     return new Date(task.dueDate) < new Date() && task.status !== "Done";
   };
 
-  const getStatusVariant = (status) => {
-    const variants = {
-      "To Do": "outline",
-      "In Progress": "primary",
-      "Testing": "warning",
-      "Done": "success"
-    };
-    return variants[status] || "outline";
-  };
-
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -565,15 +555,12 @@ const TaskCard = ({ task, deleteTask, onEditTask }) => {
       onMouseEnter={() => handleCardHover(true)}
       onMouseLeave={() => handleCardHover(false)}
     >
-      {/* Header Section with Status and Actions */}
+      {/* Header Section with Actions Only */}
       <div className="task-header">
         <div className="header-left">
           <h3>{task.title}</h3>
         </div>
         <div className="header-right">
-          <span className={`status-badge status-${getStatusVariant(task.status)}`}>
-            {task.status}
-          </span>
           <div className={`task-actions ${showActions ? 'visible' : ''}`}>
             <button onClick={() => onEditTask(task)} className="edit-btn" title="Edit task">
               <span className="action-icon">✏️</span>
