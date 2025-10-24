@@ -265,21 +265,21 @@ const TaskModal = ({ onClose, onSave, columns }) => {
               <span className="file-input-label">Choose file</span>
             </div>
           </div>
+ <div className="form-group checkbox-group">
+  <label className="checkbox-label">
+    <input
+      type="checkbox"
+      checked={form.restrictBackflow}
+      onChange={(e) =>
+        setForm({ ...form, restrictBackflow: e.target.checked })
+      }
+    />
+    <span className="custom-checkbox"></span>
+    <span className="checkbox-text">Restrict Backflow</span>
+  </label>
 
-          <div className="form-group checkbox-group">
-            <label className="checkbox-label">
-              <input
-                type="checkbox"
-                checked={form.restrictBackflow}
-                onChange={(e) =>
-                  setForm({ ...form, restrictBackflow: e.target.checked })
-                }
-              />
-              <span className="custom-checkbox"></span>
-              Restrict Backflow
-            </label>
-            <small>Prevent moving this task to previous columns</small>
-          </div>
+  <small>Prevent moving this task to previous columns</small>
+</div>
 
           <div className="modal-actions">
             <button type="button" className="cancel-btn" onClick={onClose}>
