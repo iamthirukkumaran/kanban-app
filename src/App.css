@@ -1049,11 +1049,11 @@ body {
 
 .checkbox-label {
   display: flex;
-  align-items: center;
+  align-items: center;    
   gap: 12px;
   font-size: 14px;
-  color: var(--gray-800);
   font-weight: 600;
+  color: var(--gray-800);
   cursor: pointer;
   margin-bottom: 4px;
 }
@@ -1070,11 +1070,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
   background: var(--white);
+  transition: all 0.25s ease;
 }
 
+/* Checked Styling */
 .checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
   background: var(--black);
   border-color: var(--black);
@@ -1089,6 +1089,12 @@ body {
   font-weight: bold;
 }
 
+.checkbox-text {
+  white-space: nowrap;
+  margin-left: 30px;
+}
+
+/* Description text */
 .checkbox-group small {
   color: var(--gray-600);
   font-size: 12px;
